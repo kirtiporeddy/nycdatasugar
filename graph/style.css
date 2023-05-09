@@ -1,0 +1,161 @@
+.graph span{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* add this line */
+  height: 400px;
+  position: relative;
+}
+
+.valueParent{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button {
+  background-color: #008CBA;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f75;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.result p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.result p span {
+  font-weight: normal;
+}
+.graph {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 400px;
+    position: relative;
+  }
+  
+  .y-axis-label {
+    /* position: absolute; */
+    left: 281px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .y-axis-value {
+    right: -35px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .x-axis-label {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .bar {
+    width: 50px;
+    margin: 0 10px;
+    position: relative;
+    bottom: 0;
+    background-color: #FF8F8F;
+    height: 0;
+    /* animation: bar 2s ease-out;
+    animation-fill-mode: forwards; */
+    transition: height 2s ease-out;
+  }
+  
+  
+  .label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .flex-item-left {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+  }
+
+
+  .show {
+    display: flex !important;
+  }
+  
+  .flex-item-right {
+    order: 3 !important;
+   
+  }
+  
+  .flex-item-middle {
+    order: 2 !important;
+  }
+  
+  
+  @keyframes bar {
+    from { height: 0; }
+  }
+  

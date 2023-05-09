@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Crimson+Text:ital@1&family=Oranienbaum&family=Pinyon+Script&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <title>Bar Graph</title>
+      <style>
+
+          body {
+              background-color: #FFFFF0;
+          }
+          .heading {
+    display: flex;
+    align-items: center;
+  }
+
+  body {
+    background-color: #FFFFF0;
+  }
+
+  h1 {
+  margin: 0;
+  font-size: 8.6vw;
+  /*letter-spacing: -11.6px;*/
+  text-align: left;
+  margin-left: 21px;
+  margin-top: 9px;
+  font-family: 'Chakra Petch', sans-serif !important;
+}
+
+#h2 {
+  display: none;
+  font-size: 8.6vw !important;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+ font-family: 'Chakra Petch', sans-serif !important;
+}
+
+
+h3 {
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-weight: bold !important;
+}
+
+
+.packet img {
+  display: inline-block;
+  width: 100px !important;
+  height: 122px !important;
+  margin: 0 10px !important;
+  width: 97% !important;
+  max-width: 231px !important;
+  margin-left: 20px !important;
+}
+  .dotcom {
+  margin-left: -19px;
+  }
+
+
+    /* Style the top navigation bar */
+  .navbar {
+    display: flex;
+    background-color: #FFFFF0;
+    
+    padding: none;
+  }
+
+  /* Style the navigation bar links */
+  .navbar a {
+    color: white;
+    padding: 14px 14px;
+    text-decoration: none;
+    text-align: center;
+    margin: 1px;
+  }
+  #calculateButton  {
+  background-color: #FF8F8F;
+  color: #fff;
+  padding: 10px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Chakra Petch', sans-serif !important;
+
+}
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+
+  /* Footer */
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0.1px;
+    text-align: center;
+    background-color: #FF8F8F;
+  }
+
+
+  .m_button {
+    background-color: #FF8F8F; 
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .dotcom {
+ 
+    margin-left: -19px;
+    }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  select {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+
+  button {
+    background-color: #008CBA;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Chakra Petch', sans-serif !important;
+  }
+
+  button:hover {
+    background-color: #005f75;
+  }
+
+  .result {
+    margin-top: 20px;
+    font-family: 'Chakra Petch', sans-serif !important;
+    font-weight: bold !important;
+  }
+
+  #result 
+{
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-weight: bold !important;
+}
+  .result p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .result p span {
+    font-weight: normal;
+  }
+
+
+  h5 {
+    font-family: 'Chakra Petch', sans-serif !important;
+    font-weight: 200px !important;
+  }
+        .graph {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          height: 400px;
+          position: relative;
+          font-family: 'Chakra Petch', sans-serif !important;
+          font-weight: bold !important;
+        }
+        
+        .y-axis-label {
+          /* position: absolute; */
+          left: 281px;
+          top: 50%;
+          /* transform: translateY(-50%) rotate(-90deg); */
+          font-size: 16px;
+          font-weight: bold;
+        }
+        
+        .y-axis-value {
+          /* position: absolute; */
+          left: 260px;
+          font-size: 14px;
+        }
+        
+        .x-axis-label {
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 16px;
+          font-weight: bold;
+        }
+        
+        .bar {
+          width: 50px;
+          margin: 0 10px;
+          position: relative;
+          bottom: 0;
+          background-color: #FF8F8F;
+          /* animation: bar 2s ease-out; */
+          animation-fill-mode: forwards;
+        }
+        
+      
+        .label {
+          position: absolute;
+          top: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 16px;
+          font-weight: bold;
+        }
+        
+        /* @keyframes bar {
+          from { height: 0; }
+        } */
+
+
+        .container {
+          font-weight: bold !important;
+         
+         display: block;
+         font-size: 0.83em;
+         margin-block-start: 1.67em;
+         margin-block-end: 1.67em;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         font-weight: bold !important;
+         
+        }
+
+        .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -23px;
+
+  }
+
+  .flex-item-left {
+    flex: 33%;
+    margin-top: 37px;
+
+  }
+
+  .flex-item-right {
+    flex: 33%;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 135px !important;
+    font-family: 'Chakra Petch', sans-serif !important;
+    font-weight: bold !important;
+    font-size: 12px;
+  }
+
+  .flex-item-middle {
+    flex: 33%;
+    margin-top: 45px !important;
+  }
+
+  
+    .heading {
+    justify-content: center !important;
+    display: flex;
+    align-items: center;
+}
+  
+@media (max-width: 600px) {
+  .navbar-links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Apply styles when viewport width is less than 600px */
+  .navbar {
+    flex-direction: column;
+  }
+}
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+    .flex-item-right, .flex-item-left, .flex-item-middle {
+      flex: 100%;
+    }
+  }
+      </style>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+        <!-- Header -->
+        <div class="heading">
+            <h1>A SH*T TON OF</h1>
+            <div class="packet">
+              <img src="../nycdata/images/suga.png" alt="Image">
+          </div>
+          <div class="dotcom">
+            <!-- <div id="h2">.com</div> -->
+            <h1>.com</h1>
+          </div>
+          </div>
+      
+  <hr>
+          
+  
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="../nycdata/index.html"><button class="m_button"> Home</button> </a>
+  <a href="../trial4/index.html"><button class="m_button"> Sugar Consumption </button></a>
+  <a href="../graph/index.html"><button class="m_button"> Compare & Calculate</button></a>
+  <a href="../apitest4/index.html"><button class="m_button"> Selected </button></a>
+  
+</div>
+    </div>
+      <div class="flex-container">
+
+        <div class="flex-item-left">
+            <div id="container">
+                
+                <button id="calculateButton">Calculate Sugar Data</button>
+                <div id="result">
+                  <p>Average amount of sugar:</p>
+                  <p>Highest amount of sugar:</p>
+                  <p>Lowest amount of sugar:</p>
+                </div>
+              </div>
+        </div>
+
+        <div class="flex-item-right">
+          <h5> W = Daily recommended sugar intake for women</h5>
+          <h5> M = Daily recommended sugar intake for men</h5>
+          <h5> H = NYC Fast Food restaurant item with the highest sugar content</h5>
+          <h5> A = NYC Fast Food restaurant item average sugar content</h5>
+          <h5> L = NYC Fast Food restaurant item with the lowest sugar content</h5>
+        </div>
+        <div class="flex-item-middle">
+      
+
+    <div class="graph">
+      <span>
+        <div class="y-axis-label">Grams</div>
+        <div class="valueParent">
+          <div class="y-axis-value">180</div>
+          <div class="y-axis-value">160</div>
+          <div class="y-axis-value">140</div>
+          <div class="y-axis-value">120</div>
+          <div class="y-axis-value">100</div>
+          <div class="y-axis-value">80</div>
+          <div class="y-axis-value">60</div>
+          <div class="y-axis-value">40</div>
+          <div class="y-axis-value">20</div>
+          <div class="y-axis-value">0</div>
+        </div>
+      </span>
+      <div class="bar" id="women">
+        <div class="label">W</div>
+      </div>
+      <div class="bar" id="men">
+        <div class="label">M</div>
+      </div>
+      <div class="bar" id="highest">
+        <div class="label">H</div>
+      </div>
+      <div class="bar" id="average">
+        <div class="label">A</div>
+      </div>
+      <div class="bar" id="lowest">
+        <div class="label">L</div>
+      </div>
+      <div class="x-axis-label">Sugar</div>
+    </div>
+    </div>
+
+
+    <div class="footer">
+      <h5>sourced from data.cityofnewyork.us</h5>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
